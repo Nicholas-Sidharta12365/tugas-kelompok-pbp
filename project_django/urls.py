@@ -23,4 +23,8 @@ urlpatterns = [
     path('kasir/', include('kasir.urls')),
     path('vaksin/', include('vaksin.urls')),
     path('checkup/',include('checkup.urls')),
+<<<<<<< HEAD
+=======
+    path('apotek/',include('apotek.urls'))
+>>>>>>> 077dee45da70f3dfe5ae5812310a45eaa0659090
 ]
