@@ -16,5 +16,3 @@ urlpatterns = [
     path('no_login',home,name='home'),
     path('flutter-add/', flutter_add, name='flutter_add'),
 ]
-
-
