@@ -1,6 +1,6 @@
 from http.client import HTTPResponse
 from venv import create
-from datetime import datetime
+import datetime 
 from django.shortcuts import *
 from checkup.models import Checkup,Staff
 from django.contrib.auth import authenticate,login,logout
