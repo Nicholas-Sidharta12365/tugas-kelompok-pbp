@@ -1,7 +1,6 @@
-
 from http.client import HTTPResponse
 from venv import create
-import datetime
+from datetime import datetime
 from django.shortcuts import *
 from checkup.models import Checkup,Staff
 from django.contrib.auth import authenticate,login,logout
@@ -119,7 +118,7 @@ def flutter_add(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         name = data['name']
-        date = DateTime.parse(data['date'])
+        date = datetime.strptime(data['date'],"%Y-%m-%d")
         doctor = (data['doctor'])
         statusCheckupType = data['status_checkup_type']
         recommendations = data['recommendations']
