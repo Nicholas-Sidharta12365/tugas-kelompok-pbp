@@ -118,14 +118,14 @@ def flutter_add(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         name = data['name']
-        date = datetime.strptime(data['date'],"%Y-%m-%d")
+        date = datetime.strptime(data['date'],"%Y-%m-%d %H:%M:%S.%f")
         doctor = (data['doctor'])
         statusCheckupType = data['status_checkup_type']
         recommendations = data['recommendations']
         paid = bool(data['paid'])
-        user = User.objects.get(request.user);
+        user = request.user
 
-        checkup = Checkup(user=user, name=name, date=date,doctor=doctor, statusCheckupType=statusCheckupType,recommendations=recommendations,paid=paid)
+        checkup = Checkup(user=user, name=name, date=date,doctor=doctor, status_checkup_type=statusCheckupType,recommendations=recommendations,paid=paid)
         checkup.save()
         return JsonResponse({"message": "data checkup berhasil ditambahkan", "status":200}, status=200)
     else:
